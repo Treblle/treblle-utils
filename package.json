@@ -1,6 +1,6 @@
 {
   "name": "@treblle/utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Common utilities needed for Treblle JavaScript SDKs",
   "main": "build/index.js",
   "scripts": {
