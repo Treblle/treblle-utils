@@ -1,0 +1,62 @@
+{
+  "name": "@treblle/utils",
+  "version": "0.0.2",
+  "description": "Common utilities needed for Treblle JavaScript SDKs",
+  "main": "build/index.js",
+  "scripts": {
+    "clean": "del-cli build",
+    "compile": "npm run clean && npx tsc",
+    "build": "npm run compile",
+    "lint": "eslint . --ext=.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "build/index.d.ts",
+    "build/index.js"
+  ],
+  "keywords": [
+    "Treblle",
+    "utils"
+  ],
+  "author": "Dominus_Kelvin, Treblle",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
