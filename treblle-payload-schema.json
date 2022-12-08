@@ -39,11 +39,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "name",
-                "release",
-                "architecture"
-              ]
+              "required": ["name", "release", "architecture"]
             },
             "software": {
               "type": ["string", "null"]
@@ -58,14 +54,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "ip",
-            "timezone",
-            "os",
-            "software",
-            "signature",
-            "protocol"
-          ]
+          "required": ["ip", "timezone", "os", "software", "signature", "protocol"]
         },
         "language": {
           "type": "object",
@@ -83,10 +72,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "name",
-            "version"
-          ]
+          "required": ["name", "version"]
         },
         "request": {
           "type": "object",
@@ -122,26 +108,13 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "content-type",
-                "content-length",
-                "host",
-                "user-agent"
-              ]
+              "required": ["host", "user-agent"]
             },
             "body": {
               "type": "object"
             }
           },
-          "required": [
-            "timestamp",
-            "ip",
-            "url",
-            "user_agent",
-            "method",
-            "headers",
-            "body"
-          ]
+          "required": ["timestamp", "ip", "url", "user_agent", "method", "headers", "body"]
         },
         "response": {
           "type": "object",
@@ -162,13 +135,7 @@
               "type": ["string", "object"]
             }
           },
-          "required": [
-            "headers",
-            "code",
-            "size",
-            "load_time",
-            "body"
-          ]
+          "required": ["headers", "code", "size", "load_time", "body"]
         },
         "errors": {
           "type": "array",
@@ -196,20 +163,8 @@
           ]
         }
       },
-      "required": [
-        "server",
-        "language",
-        "request",
-        "response",
-        "errors"
-      ]
+      "required": ["server", "language", "request", "response", "errors"]
     }
   },
-  "required": [
-    "api_key",
-    "project_id",
-    "version",
-    "sdk",
-    "data"
-  ]
+  "required": ["api_key", "project_id", "version", "sdk", "data"]
 }
