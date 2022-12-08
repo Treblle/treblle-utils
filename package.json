@@ -1,63 +1,33 @@
 {
   "name": "@treblle/utils",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Common utilities needed for Treblle JavaScript SDKs",
-  "main": "build/index.js",
+  "main": "index.js",
   "scripts": {
     "clean": "del-cli build",
-    "compile": "npm run clean && npx tsc",
     "build": "npm run compile",
-    "lint": "eslint . --ext=.ts",
-    "prepublishOnly": "npm run build"
+    "lint": "npx prettier --check .",
+    "lint:fix": "npx prettier --write .",
+    "prepare": "husky install"
   },
-  "files": [
-    "build/index.d.ts",
-    "build/index.js"
-  ],
   "keywords": [
     "Treblle",
+    "Treblle SDK",
     "utils"
   ],
   "author": "Dominus_Kelvin, Treblle",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.11.9",
     "del-cli": "^5.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1",
-    "typescript": "^4.8.4"
-  },
-  "eslintConfig": {
-    "extends": [
-      "prettier"
-    ],
-    "plugins": [
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "endOfLine": "auto"
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "build"
-  ],
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true,
-    "useTabs": false,
-    "quoteProps": "consistent",
-    "bracketSpacing": true,
-    "arrowParens": "always",
-    "printWidth": 100
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.7.1"
   },
   "dependencies": {
+    "jsonschema": "^1.4.1",
     "node-fetch": "^2.6.7"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
