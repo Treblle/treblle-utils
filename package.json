@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "clean": "del-cli build",
-    "compile": "npm run clean && npx tsc",
     "build": "npm run compile",
-    "lint": "eslint . --ext=.ts",
-    "prepublishOnly": "npm run build"
+    "lint": "npx prettier --check .",
+    "lint:fix": "npx prettier --write .",
+    "prepublishOnly": "npm run build",
+    "prepare": "husky install"
   },
   "keywords": [
     "Treblle",
@@ -19,10 +20,15 @@
   "license": "MIT",
   "devDependencies": {
     "del-cli": "^5.0.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.7.1"
   },
   "dependencies": {
     "jsonschema": "^1.4.1",
     "node-fetch": "^2.6.7"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
