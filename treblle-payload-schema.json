@@ -126,13 +126,13 @@
               "type": "integer"
             },
             "size": {
-              "type": "integer"
+              "type": ["integer", "string"]
             },
             "load_time": {
               "type": "number"
             },
             "body": {
-              "type": ["string", "object"]
+              "type": ["string", "object", "null"]
             }
           },
           "required": ["headers", "code", "size", "load_time", "body"]
