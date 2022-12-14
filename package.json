@@ -24,7 +24,6 @@
     "prettier": "^2.7.1"
   },
   "dependencies": {
-    "jsonschema": "^1.4.1",
     "node-fetch": "^2.6.7"
   },
   "lint-staged": {
