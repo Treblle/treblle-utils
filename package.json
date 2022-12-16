@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "del-cli build",
+    "test": "node bin/test.js",
     "build": "npm run compile",
     "lint": "npx prettier --check .",
     "lint:fix": "npx prettier --write .",
@@ -18,6 +19,10 @@
   "author": "Dominus_Kelvin, Treblle",
   "license": "MIT",
   "devDependencies": {
+    "@japa/assert": "^1.3.6",
+    "@japa/run-failed-tests": "^1.1.0",
+    "@japa/runner": "^2.2.2",
+    "@japa/spec-reporter": "^1.3.2",
     "del-cli": "^5.0.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
