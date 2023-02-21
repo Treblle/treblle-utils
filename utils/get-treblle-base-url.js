@@ -6,5 +6,5 @@ module.exports = function getTreblleBaseUrl() {
   ]
   const randomUrlIndex = Math.floor(Math.random() * treblleBaseUrls.length)
 
-  return treblleBaseUrls.at(randomUrlIndex)
+  return treblleBaseUrls[randomUrlIndex]
 }
