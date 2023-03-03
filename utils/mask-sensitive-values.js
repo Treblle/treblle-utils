@@ -1,4 +1,13 @@
-module.exports = function maskSensitiveValues(payload, fieldsToMask) {
+const maskValue = require('../private/mask-value')
+/**
+ * Mask sensitive values in the payload to send to Treblle
+ * @description we mask certain fields by default but you can also specify more fields to mask in SDK land
+ * @link https://docs.treblle.com/en/security/masked-fields
+ * @param {object} payload
+ * @param {array} fieldsToMask
+ * @returns {object} payloadToSendToTreblle
+ */
+function maskSensitiveValues(payload, fieldsToMask) {
   if (typeof payload !== 'object') return payload
   if (Array.isArray(payload)) {
     return payload.map((val) => maskSensitiveValues(val, fieldsToMask))
@@ -9,7 +18,7 @@ module.exports = function maskSensitiveValues(payload, fieldsToMask) {
   let safeObject = Object.keys(objectToMask).reduce(function (acc, propName) {
     if (typeof objectToMask[propName] === 'string') {
       if (fieldsToMask[propName] === true) {
-        acc[propName] = '*'.repeat(objectToMask[propName].length)
+        acc[propName] = maskValue(objectToMask[propName], propName)
       } else {
         acc[propName] = objectToMask[propName]
       }
@@ -26,3 +35,5 @@ module.exports = function maskSensitiveValues(payload, fieldsToMask) {
 
   return safeObject
 }
+
+module.exports = maskSensitiveValues
