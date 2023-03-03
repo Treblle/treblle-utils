@@ -1,5 +1,5 @@
 const { test } = require('@japa/runner')
-const getTreblleBaseUrl = require('../utils/get-treblle-base-url')
+const getTreblleBaseUrl = require('../../utils/get-treblle-base-url')
 
 test.group('getTreblleBaseUrl', () => {
   test('return a string', ({ assert }) => {
