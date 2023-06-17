@@ -18,7 +18,11 @@ module.exports = function getResponsePayload(responseBody, fieldsToMask) {
       let parsedResponseBody = JSON.parse(originalResponseBody)
       payload = maskSensitiveValues(parsedResponseBody, fieldsToMask)
     } else if (typeof originalResponseBody === 'object') {
-      payload = maskSensitiveValues(originalResponseBody, fieldsToMask)
+      if ('toJSON' in originalResponseBody) {
+        payload = maskSensitiveValues(originalResponseBody.toJSON(), fieldsToMask)
+      } else {
+        payload = maskSensitiveValues(originalResponseBody, fieldsToMask)
+      }
     }
   } catch (e) {
     // if we can't parse the body we'll leave it empty and set an error
