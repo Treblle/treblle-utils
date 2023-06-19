@@ -9,8 +9,13 @@ const maskValue = require('../private/mask-value')
  */
 function maskSensitiveValues(payload, fieldsToMask) {
   if (typeof payload !== 'object') return payload
+
   if (Array.isArray(payload)) {
     return payload.map((val) => maskSensitiveValues(val, fieldsToMask))
+  }
+
+  if ('toJSON' in payload) {
+    return maskSensitiveValues(payload.toJSON(), fieldsToMask)
   }
 
   let objectToMask = { ...payload }
