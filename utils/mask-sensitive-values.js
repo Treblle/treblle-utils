@@ -8,6 +8,7 @@ const maskValue = require('../private/mask-value')
  * @returns {object} payloadToSendToTreblle
  */
 function maskSensitiveValues(payload, fieldsToMask) {
+  if (payload == null || typeof payload == 'undefined') return null
   if (typeof payload !== 'object') return payload
 
   if (Array.isArray(payload)) {
