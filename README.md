@@ -14,7 +14,7 @@ npm i @treblle/utils --save
 
 Sends request payload to your Treblle Dashboard.
 
-```sh
+```js
 const { sendPayloadToTreblle } = require('@treblle/utils')
 
 try {
@@ -30,7 +30,7 @@ You can check out [this](https://github.com/Treblle/treblle-utils/blob/develop/t
 
 Generates fields to be masked.
 
-```sh
+```js
 const { generateFieldsToMask } = require('@treblle/utils')
 
 const fieldsToMask = generateFieldsToMask(['field1', 'field2'])
@@ -42,7 +42,7 @@ The `field1` and `field2` placeholder represent additional fields that you don't
 
 Masks sensitive values in the payload to be sent to your Treblle Dasbhoard
 
-```sh
+```js
 const { maskSensitiveValues } = require('@treblle/utils')
 
 const maskedRequestPayload = maskSensitiveValues(payload, fieldsToMask)
@@ -52,7 +52,7 @@ const maskedRequestPayload = maskSensitiveValues(payload, fieldsToMask)
 
 Useful in frameworks that don't calculate requests duration.
 
-```sh
+```js
 const { getRequestDuration } = require('@treblle/utils')
 
 const requestStartTime = process.hrtime()
