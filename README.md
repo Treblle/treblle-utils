@@ -12,15 +12,15 @@ npm i @treblle/utils --save
 
 ### `sendPayloadToTreblle()`
 
-Sends request payload to your Treblle Dashboard.
+Sends payload to Treblle.
 
 ```js
 const { sendPayloadToTreblle } = require('@treblle/utils')
 
 try {
-    sendPayloadToTreblle(payload, '<YOUR_TREBLLE_API_KEY>')
+  sendPayloadToTreblle(payload, '<YOUR_TREBLLE_API_KEY>')
 } catch (error) {
-    console.log(error)
+  console.log(error)
 }
 ```
 
@@ -36,11 +36,11 @@ const { generateFieldsToMask } = require('@treblle/utils')
 const fieldsToMask = generateFieldsToMask(['field1', 'field2'])
 ```
 
-The `field1` and `field2` placeholder represent additional fields that you don't want showing up on your Treblle dashboard. Treblle already does some behind the scenes masking of common fields for you out of the box.
+The `field1` and `field2` placeholder represent additional fields you want masked alongside the [default fields that will be masked](https://docs.treblle.com/en/security/masked-fields)
 
 ### `maskSensitiveValues()`
 
-Masks sensitive values in the payload to be sent to your Treblle Dasbhoard
+Masks sensitive values in the payload to be sent.
 
 ```js
 const { maskSensitiveValues } = require('@treblle/utils')
