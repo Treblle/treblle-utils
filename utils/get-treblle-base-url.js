@@ -1,3 +1,7 @@
+/**
+ * Returns Treblle API base URL
+ * @returns {string}
+ */
 module.exports = function getTreblleBaseUrl() {
   const treblleBaseUrls = [
     'https://rocknrolla.treblle.com',

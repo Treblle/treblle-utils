@@ -1,3 +1,8 @@
+/**
+ * Generates sensitive fields to mask
+ * @param {string[]} additionalFieldsToMask
+ * @returns {Record<string, boolean>}
+ */
 module.exports = function generateFieldsToMask(additionalFieldsToMask = []) {
   const defaultFieldsToMask = [
     'password',

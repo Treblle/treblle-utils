@@ -1,3 +1,8 @@
+/**
+ * Returns request duration
+ * @param {number[]} startTime
+ * @returns {number}
+ */
 module.exports = function getRequestDuration(startTime) {
   const NS_PER_SEC = 1e9
   const NS_TO_MICRO = 1e6
