@@ -1,6 +1,6 @@
 /**
  * Returns request duration
- * @param {number[]} startTime
+ * @param {[number, number]} startTime
  * @returns {number}
  */
 module.exports = function getRequestDuration(startTime) {

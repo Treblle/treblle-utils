@@ -8,8 +8,8 @@ export interface TrebllePayload {
     language: LanguagePayload
     request: RequestPayload
     response: ResponsePayload
+    errors: Object[]
   }
-  errors: Object[]
 }
 
 export interface LanguagePayload {

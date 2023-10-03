@@ -10,7 +10,7 @@ function maskValue(valueToMask, propName) {
   if (['authorization'].includes(propName.toLowerCase()) && valueToMask.match(/^(bearer|basic)/i)) {
     const [authPrefix, authToken] = valueToMask.split(' ')
     const maskedAuthToken = '*'.repeat(authToken.length)
-    maskedValue = `${authPrefix} ${maskedAuthToken}`
+    const maskedValue = `${authPrefix} ${maskedAuthToken}`
     return maskedValue
   }
   return '*'.repeat(valueToMask.length)

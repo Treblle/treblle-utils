@@ -7,6 +7,7 @@ const getTreblleBaseUrl = require('./get-treblle-base-url')
  * @param {string | undefined} apiKey
  */
 module.exports = function sendPayloadToTreblle(payload, apiKey) {
+  // @ts-ignore
   fetch(getTreblleBaseUrl(), {
     method: 'POST',
     headers: {
