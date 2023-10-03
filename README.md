@@ -8,9 +8,9 @@
 npm i @treblle/utils --save
 ```
 
-## utils
+## Usage
 
-### `sendPayloadToTreblle`
+### `sendPayloadToTreblle()`
 
 Sends request payload to your Treblle Dashboard.
 
@@ -26,7 +26,7 @@ try {
 
 You can check out [this](https://github.com/Treblle/treblle-utils/blob/develop/treblle-payload-schema.json) JSON schema for the shape of the payload to send to Treblle.
 
-### `generateFieldsToMask`
+### `generateFieldsToMask()`
 
 Generates fields to be masked.
 
@@ -38,7 +38,7 @@ const fieldsToMask = generateFieldsToMask(['field1', 'field2'])
 
 The `field1` and `field2` placeholder represent additional fields that you don't want showing up on your Treblle dashboard. Treblle already does some behind the scenes masking of common fields for you out of the box.
 
-### `maskSensitiveValues`
+### `maskSensitiveValues()`
 
 Masks sensitive values in the payload to be sent to your Treblle Dasbhoard
 
@@ -48,7 +48,7 @@ const { maskSensitiveValues } = require('@treblle/utils')
 const maskedRequestPayload = maskSensitiveValues(payload, fieldsToMask)
 ```
 
-### `getRequestDuration`
+### `getRequestDuration()`
 
 Useful in frameworks that don't calculate requests duration.
 
