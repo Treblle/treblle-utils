@@ -4,8 +4,8 @@ const maskValue = require('../private/mask-value')
  * @description we mask certain fields by default but you can also specify more fields to mask in SDK land
  * @link https://docs.treblle.com/en/security/masked-fields
  * @param {object} payload
- * @param {array} fieldsToMask
- * @returns {object} payloadToSendToTreblle
+ * @param {Record<string, boolean>} fieldsToMask
+ * @returns {object}
  */
 function maskSensitiveValues(payload, fieldsToMask) {
   if (payload == null || typeof payload == 'undefined') return null
