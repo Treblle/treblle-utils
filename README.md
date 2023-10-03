@@ -1,6 +1,6 @@
 # treblle-utils
 
-`treblle-utils` exposes common method(utils), that is needed to build JavaScript SDKs for Treblle.
+`treblle-utils` exposes common methods(utils), that is needed to build JavaScript SDKs for Treblle.
 
 ## Installation
 
@@ -24,7 +24,7 @@ try {
 }
 ```
 
-You can check out [this](https://github.com/Treblle/treblle-utils/blob/develop/treblle-payload-schema.json) JSON schema for the shape of the payload to send to Treblle.
+> You can check out [this](https://github.com/Treblle/treblle-utils/blob/develop/treblle-payload-schema.json) JSON schema for the shape of the payload to send to Treblle.
 
 ### `generateFieldsToMask()`
 
